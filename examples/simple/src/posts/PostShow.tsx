@@ -26,6 +26,9 @@ import {
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import PostTitle from './PostTitle';
+import {
+    PostCommentsField,
+} from './PostCommentsField'
 
 const CreateRelatedComment = ({ record }: { record?: Record }) => (
     <Button
@@ -93,19 +96,7 @@ const PostShow = props => {
                         <CloneButton />
                     </Tab>
                     <Tab label="post.form.comments">
-                        <ReferenceManyField
-                            addLabel={false}
-                            reference="comments"
-                            target="post_id"
-                            sort={{ field: 'created_at', order: 'DESC' }}
-                        >
-                            <Datagrid>
-                                <DateField source="created_at" />
-                                <TextField source="author.name" />
-                                <TextField source="body" />
-                                <EditButton />
-                            </Datagrid>
-                        </ReferenceManyField>
+                        <PostCommentsField />
                         <CreateRelatedComment />
                     </Tab>
                 </TabbedShowLayout>

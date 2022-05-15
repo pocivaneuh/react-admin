@@ -15,7 +15,14 @@ const defaultSort = { field: 'title', order: 'ASC' };
 
 const CommentCreate = () => (
     <Create redirect={false}>
-        <SimpleForm>
+        <SimpleForm
+            validate={() => ({
+                body: {
+                    message: 'ra.validation.minValue',
+                    args: { min: 42 },
+                },
+            })}
+        >
             <PostReferenceInput
                 source="post_id"
                 reference="posts"

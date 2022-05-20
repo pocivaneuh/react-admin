@@ -7,7 +7,7 @@ import {
     SimpleForm,
     Toolbar,
     SaveButton,
-    CreateProps,
+    SaveButtonProps,
     required,
     minLength,
     useNotify,
@@ -21,7 +21,7 @@ const defaultSort = { field: 'title', order: 'ASC' };
 const CommentCreateToolbar: React.VFC = () => {
     const { reset } = useFormContext();
     const notify = useNotify();
-    const mutationOptions: CreateProps['mutationOptions'] = {
+    const mutationOptions: SaveButtonProps['mutationOptions'] = {
         onSuccess: () => {
             console.debug('SmsCreateToolbar.onSuccess');
             reset();

@@ -34,6 +34,7 @@ const CommentCreateToolbar: React.VFC = () => {
         <Toolbar>
             <SaveButton
                 label="Custom create"
+                type="button"
                 mutationOptions={mutationOptions}
             />
         </Toolbar>

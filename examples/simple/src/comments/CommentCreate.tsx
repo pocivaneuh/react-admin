@@ -15,7 +15,7 @@ const defaultSort = { field: 'title', order: 'ASC' };
 
 const CommentCreate = () => (
     <Create redirect={false}>
-        <SimpleForm>
+        <SimpleForm validate={() => ({})}>
             <PostReferenceInput
                 source="post_id"
                 reference="posts"
